@@ -24,15 +24,16 @@ function preload() {
   sindhuSriram_FitBit = loadModel('objects/sindhuSriram_FitBit.obj', true);
   tattooobject = loadModel('objects/tattooobject.obj', true);
   thermos = loadModel('objects/thermos.obj', true);
-
-  // bidet = loadModel('objects/thermos.obj', true);
-  // honey = loadModel('objects/thermos.obj', true);
-  // dollar = loadModel('objects/thermos.obj', true);
-  // laptop = loadModel('objects/thermos.obj', true);
-  // bentonite = loadModel('objects/thermos.obj', true);
-  // spacestation = loadModel('objects/thermos.obj', true);
-  // plant = loadModel('objects/thermos.obj', true);
-  // eye = loadModel('objects/thermos.obj', true);
+  bidet = loadModel('objects/Sangeetha__ObjectBidet.obj', true);
+  honey = loadModel('objects/HoneyC.obj', true);
+  bee = loadModel('objects/Bee3.obj', true);
+  dollar = loadModel('objects/dollar.obj', true);
+  laptop = loadModel('objects/laptopmodel.obj', true);
+  bentonite = loadModel('objects/LipStick.obj', true);
+  spacestation = loadModel('objects/test02.obj', true);
+  plant = loadModel('objects/elip.obj', true);
+  eye = loadModel('objects/Eye.obj', true);
+  atm = loadModel('objects/ATM.obj', true);
 }
 
 let objectArray_row1 = [];
@@ -44,8 +45,8 @@ function setup() {
   angleMode(DEGREES);
 
   objectArray_row1 = [graphene, sheriffHali_bracelet3d, sindhuSriram_FitBit, tattooobject, thermos]
-  objectArray_row2 = [graphene, sheriffHali_bracelet3d, sindhuSriram_FitBit, tattooobject, thermos]
-  objectArray_row3 = [graphene, sheriffHali_bracelet3d, sindhuSriram_FitBit, tattooobject, thermos]
+  objectArray_row2 = [bidet, honey, bee, dollar, spacestation]
+  objectArray_row3 = [bentonite, eye, laptop, plant, atm]
 
 }
 
@@ -72,29 +73,29 @@ function draw() {
     pop();
   }
 
-  // for (i = 0; i < objectArray_row1.length; i++) {
-  //   push();
-  //   translate(spacerX * i, spacerY);
-  //   // ambientMaterial(255, 0, 150);
-  //   normalMaterial();
-  //   scale(1);
-  //   rotateX(frameCount * rotationSpeed);
-  //   rotateY(frameCount * rotationSpeed);
-  //   model(objectArray_row2[i]);
-  //   pop();
-  // }
-  //
-  // for (i = 0; i < objectArray_row1.length; i++) {
-  //   push();
-  //   translate(spacerX * i, spacerY * 2);
-  //   // ambientMaterial(255, 0, 150);
-  //   normalMaterial();
-  //   scale(1);
-  //   rotateX(frameCount * rotationSpeed);
-  //   rotateY(frameCount * rotationSpeed);
-  //   model(objectArray_row3[i]);
-  //   pop();
-  // }
+  for (i = 0; i < objectArray_row2.length; i++) {
+    push();
+    translate(spacerX * i, spacerY);
+    // ambientMaterial(255, 0, 150);
+    normalMaterial();
+    scale(1);
+    rotateX(frameCount * rotationSpeed);
+    rotateY(frameCount * rotationSpeed);
+    model(objectArray_row2[i]);
+    pop();
+  }
+
+  for (i = 0; i < objectArray_row3.length; i++) {
+    push();
+    translate(spacerX * i, spacerY * 2);
+    // ambientMaterial(255, 0, 150);
+    normalMaterial();
+    scale(1);
+    rotateX(frameCount * rotationSpeed);
+    rotateY(frameCount * rotationSpeed);
+    model(objectArray_row3[i]);
+    pop();
+  }
 
 
   pop();
@@ -110,28 +111,3 @@ function windowResized() {
 
 
 
-
-
-// ortho();
-//
-// let locX = mouseX - width / 2;
-// let locY = mouseY - height / 2;
-// // ambientLight(15);
-// pointLight(250, 250, 250, locX, locY, 250);
-//
-// for (x = 0; x <= width; x+= spacer) {
-//   locationArray[x] = [];
-//   for (y = 0; y <= height; y+= spacer) {
-//     locationArray[x][y] = objectArray[y];
-//     push();
-//     translate(x - width/2, y - height/2);
-//     noStroke();
-//     ambientMaterial(255, 0, 150);
-//     scale(1);
-//     rotateX(frameCount * rotationSpeed * x/spacer);
-//     rotateY(frameCount * rotationSpeed * y/spacer);
-//     model(objectArray[x][y]);
-//     pop();
-//   }
-//
-// }
